@@ -1,0 +1,114 @@
+// Sass for videojs-socialmediashare
+
+.video-js {
+
+  // This class is added to the video.js element by the plugin by default.
+  &.vjs-socialmediashare {
+    display: block;
+
+    &.vjs-button-social-hide .vjs-button-social {
+      display: none
+    }
+
+    .vjs-menu-social {
+      //margin:20px 0;
+      position: absolute;
+      display: none;
+      top: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      background: rgba(0, 0, 0, .7);
+      height: 100%;
+      font-size: 3em;
+
+      &.show {
+        display: flex;
+      }
+
+      span {
+        position: relative;
+        width: 4em;
+        transform: translate(50%, 50%);
+
+        &.vjs-icon-facebook:before {
+          background: #3b5998;
+          border: 3px solid darken(#3b5998, 10%);
+        }
+        &.vjs-icon-twitter:before {
+          background: #0084b4;
+          border: 3px solid darken(#0084b4, 10%);
+        }
+
+        &:before {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          background: gray;
+          height: 2em;
+          width: 2em;
+          border-radius: 25%;
+          //border: 8px solid gray;
+          //transition: border .3s;
+        }
+
+        &:hover:before {
+          color: gray;
+          background: #fff;
+          cursor: pointer;
+          border-color: gray;
+          //border:6px solid gray;
+        }
+      }
+    }
+
+    .vjs-button-social {
+      //height: 0;
+      position: absolute;
+      top: .5em;
+      right: 1.5em;
+      //display: none;
+      cursor: pointer;
+      font-size: 30px;
+      &:not(.open):before {
+        content: "\f10f";
+        //background: black;
+        width: 1em;
+        padding: 0;
+      }
+
+      &:before {
+        width: 2em;
+        //padding: 5px;
+        //font-size: 30px;
+        border-radius: 25%;
+        background: none;
+        content: "\f115";
+        font-family: VideoJS;
+        //transform: translate(-50%, -50%);
+        position: absolute;
+
+      }
+
+      &:hover:before {
+        color: darkgray;
+      }
+    }
+
+    .icon {
+      &-facebook:before {
+        content: "\f082";
+      }
+      &-twitter:before {
+        content: "\f081";
+      }
+    }
+
+
+
+  }
+}
+
